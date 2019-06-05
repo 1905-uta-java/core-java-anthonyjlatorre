@@ -145,7 +145,6 @@ public class EvaluationService {
 										eightPoint, tenPoint};
 		string = string.toUpperCase();
 		char[] stringChar = string.toCharArray();
-		System.out.println(stringChar);
 		int counter = 0;
 		for(char a : stringChar) {
 		for(int i = 0; i < points.length; i++) {
@@ -179,7 +178,6 @@ public class EvaluationService {
 		
 		}
 		
-		System.out.println(counter);
 		return counter;
 	}
 
@@ -226,11 +224,10 @@ public class EvaluationService {
 			phone += newString[i];
 		}
 		
-		if(phone.length() == 10) {
-			return phone;
+		if(phone.length() != 10) {
+			throw new IllegalArgumentException();
 		}
-		System.out.println("Phone: " + phone);
-		return null;
+		return phone;
 	}
 
 	/**
@@ -244,7 +241,6 @@ public class EvaluationService {
 	 */
 	public Map<String, Integer> wordCount(String string) {
 		HashMap<String, Integer> wordCount = new HashMap<String, Integer>();
-		System.out.println(string);
 		String[] word = string.split(" |,");
 		
 		String[] trimmedWords = new String[word.length];
@@ -261,7 +257,6 @@ public class EvaluationService {
 			else
 				wordCount.put(s, 1);
 		}
-		System.out.println(wordCount.toString());
 		return wordCount;
 	}
 
@@ -511,7 +506,6 @@ public class EvaluationService {
 					returning += editing;
 				}
 			}
-			System.out.println(returning);
 			return returning;
 			
 			
@@ -591,7 +585,6 @@ public class EvaluationService {
 				}
 			}
 			
-			System.out.println(encoded + " ");
 
 			for(int i = encoded.length(); i > 0; i--) {
 				if(i%5 == 0 && i != 0) {
@@ -634,7 +627,6 @@ public class EvaluationService {
 				}
 			}
 				
-			System.out.println(uncoded);
 			return uncoded.toString().trim();
 		}
 	}
